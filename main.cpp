@@ -1,4 +1,5 @@
 #include "Graph.h"
+#include "functions.h"
 #include <iostream>
 #include <vector>
 #include <map>
@@ -7,12 +8,6 @@
 #include <format>
 
 using namespace std;
-
-template <typename T>
-void InputBracket(T& input) {
-	cout << ">>> ";
-	cin >> input;
-}
 
 void MenuDeleteLogic(Graph& calculator) {
 	int input;
