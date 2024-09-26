@@ -8,29 +8,6 @@
 
 using namespace std;
 
-void displayMenu() {
-	cout << "\033[1;36m"
-		"\n=============="
-		"\n1. New function"
-		"\n2. Function list"
-		"\n3. Delete function"
-		"\n4. Plot Graph"
-		"\n5. Graph range"
-		"\n6. Exit"
-		"\n=============="
-		"\033[0m" << endl;
-}
-
-void displayMenuEdit() {
-	cout << "\033[1;31m"
-		"\n=============="
-		"\n1. Delete"
-		"\n2. Reset"
-		"\n3. Exit"
-		"\n=============="
-		"\033[0m" << endl;
-}
-
 template <typename T>
 void InputBracket(T& input) {
 	cout << ">>> ";
@@ -41,10 +18,19 @@ void MenuDeleteLogic(Graph& calculator) {
 	int input;
 	const int EXIT = 3;
 
+	string menu_edit = 
+		"\033[1;31m"
+		"\n=============="
+		"\n1. Delete"
+		"\n2. Reset"
+		"\n3. Exit"
+		"\n=============="
+		"\033[0m";
+
 	do {
 		input = EXIT;
 		calculator.displayFunctions();
-		displayMenuEdit();
+		cout << menu_edit << endl;
 		InputBracket(input);
 
 		switch (input)
@@ -75,9 +61,21 @@ int main() {
 	const int MENU_EXIT = 6;
 	int menu_choice;
 
+	string menu_main = 
+		"\033[1;36m"
+		"\n=============="
+		"\n1. New function"
+		"\n2. Function list"
+		"\n3. Delete function"
+		"\n4. Plot Graph"
+		"\n5. Graph range"
+		"\n6. Exit"
+		"\n=============="
+		"\033[0m";
+
 	do {
 		menu_choice = MENU_EXIT;
-		displayMenu();
+		cout << menu_main << endl;
 		InputBracket(menu_choice);
 
 		switch (menu_choice)
