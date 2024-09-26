@@ -6,7 +6,7 @@ using namespace std;
 
 Graph::Graph(int range) : range(range) {
 		setGraphRange(range);
-        // initializeGraph();
+        initializeGraph();
 	}
 
 void Graph::initializeGraph() {
@@ -92,19 +92,20 @@ void Graph::calculateFunctionPoints(const vector<double>& coeff) {
 }
 
 void Graph::plotFunctions() {
-    for (auto& func : functions) // iterate through every function
+
+    // for (auto& func : functions) // iterate through every function
+    for (int f = 0; f < functions.size(); f++)
         for (int i = 0; i < rows; i++)
             for (int j = 0; j < cols; j++)
-                for (auto& point : func.points)
+                for (auto& point : functions[f].points)
                     // y becomes larger as i goes towards 0, while x becomes larger as i goes towards infinity
                     if (i == -point.y + range_half and j == point.x + range_half) {
-                        if (i == range_half)
-                            graph[i][j] = graph_color::root + "0" + graph_color::end;
-                        else if (graph[i][j] != " " and j != range_half) // <-- prevent y axis override
-                            graph[i][j] = graph_color::intersect + "0" + graph_color::end;
-                        else
-                            graph[i][j] = graph_color::function + "0" + graph_color::end;
-                        cout << "point";
+                        // if (i == range_half)
+                        //     graph[i][j] = graph_color::root + "0" + graph_color::end;
+                        // else if (graph[i][j] != " " and j != range_half) // <-- prevent y axis override
+                        //     graph[i][j] = graph_color::intersect + "0" + graph_color::end;
+                        // else
+                            graph[i][j] = graph_color::color_list[f] + "0" + graph_color::end;
                     }
 }
 

@@ -112,7 +112,6 @@ int main() {
 			break;
 		}
 		case 4: {
-			calculator.initializeGraph();
 			calculator.plotFunctions();
 			calculator.plotGraph();
 

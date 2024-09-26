@@ -42,12 +42,31 @@ using namespace std;
 // \033[0m
 
 namespace graph_color {
-	const string axis_x = "\033[31m";		// x-axis
-	const string axis_y = "\033[31m";		// y-axis
-	const string function = "\033[32m";		// graph
-	const string intersect = "\033[35m";	// intersect (graph)
-	const string root = "\033[34m";			// x = 0
-	const string end = "\033[0m";			// end of color change
+    const string black      = "\033[30m";
+    const string red        = "\033[31m";
+    const string green      = "\033[32m";
+    const string yellow     = "\033[33m";
+    const string blue       = "\033[34m";
+    const string magenta    = "\033[35m";
+    const string cyan       = "\033[36m";
+    const string white      = "\033[37m";
+
+	const string axis_x = red;		    // x-axis
+	const string axis_y = red;		    // y-axis
+	const string intersect = magenta;	// intersect (graph)
+	const string root = blue;			// x = 0
+	const string end = "\033[0m";	    // end of color change
+
+    const vector<string> color_list = {
+        //black,
+        //red,
+        green,
+        yellow,
+        blue,
+        magenta,
+        cyan,
+        white
+    };
 }
 
 struct Point {
